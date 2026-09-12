@@ -84,6 +84,13 @@ function formatExpenseDate(date: string) {
   })
 }
 
+function getGreeting(): string {
+  const hour = new Date().getHours()
+
+  if (hour < 12) return "Good morning"
+  if (hour < 18) return "Good afternoon"
+  return "Good evening"
+}
 function App() {
   const [expenses, setExpenses] = useState<Expense[]>([])
   const [balances, setBalances] = useState<Balance[]>([])
@@ -336,7 +343,7 @@ function App() {
           <div>
             <div className="eyebrow">FAIRSHARE GROUP</div>
             <h1>
-              {activeView === "dashboard" && "Good afternoon, Jocelyn"}
+              {activeView === "dashboard" && (<>{getGreeting()}, Jocelyn! Ready to keep your expenses on track?</>)}
               {activeView === "expenses" && "Expenses"}
               {activeView === "balances" && "Balances"}
               {activeView === "settlements" && "Settlements"}
