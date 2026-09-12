@@ -1,0 +1,16 @@
+﻿.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.git
+.github
+node_modules
+frontend/dist
+frontend/.vite
+fairshare.db
+*.db-shm
+*.db-wal
+.env
+frontend/.env
